@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sherly's Universe</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cyber-loader" id="loader">
+        <div class="loader-grid">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+        </div>
+        <div class="loader-text">INITIALIZING SYSTEM</div>
+        <div class="loader-progress">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <div class="main-container" id="main-content">
+        <nav class="cyber-nav">
+            <div class="nav-logo">SHERLY</div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-section="home">HOME</a>
+                <a href="#" class="nav-link" data-section="gallery">GALLERY</a>
+                <a href="#" class="nav-link" data-section="about">ABOUT</a>
+                <a href="#" class="nav-link" data-section="contact">CONTACT</a>
+                <div class="nav-indicator"></div>
+            </div>
+            <div class="nav-social">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+        </nav>
+
+        <section class="hero-section" id="home">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line"><span class="neon-text">SHERLY</span></span>
+                    <span class="title-line">MY<span class="highlight">HEART</span></span>
+                </h1>
+                <p class="hero-subtitle">Model • Creative • Visionary</p>
+                <button class="cyber-button" id="explore-btn">
+                    <span class="button-text">EXPLORE</span>
+                    <span class="button-glow"></span>
+                </button>
+            </div>
+            <div class="hero-hologram" id="hologram-container"></div>
+            <div class="hero-grid">
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+            </div>
+        </section>
+
+        <section class="gallery-section" id="gallery">
+            <h2 class="section-title">DIGITAL <span class="highlight">GALLERY</span></h2>
+            <div class="gallery-grid">
+                <!-- Gallery items will be added via JS -->
+            </div>
+            <div class="gallery-viewer" id="gallery-viewer">
+                <div class="viewer-close">&times;</div>
+                <img src="" alt="" class="viewer-image">
+                <div class="viewer-nav">
+                    <button class="viewer-prev">&lt;</button>
+                    <button class="viewer-next">&gt;</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="about-content">
+                <h2 class="section-title">BEHIND THE <span class="highlight">LENS</span></h2>
+                <div class="about-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="100">0</div>
+                        <div class="stat-label">PHOTOSHOOTS</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="50">0</div>
+                        <div class="stat-label">COLLABORATIONS</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="10">0</div>
+                        <div class="stat-label">AWARDS</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="image-frame"></div>
+                <div class="image-glitch"></div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <h2 class="section-title">GET IN <span class="highlight">TOUCH</span></h2>
+            <form class="cyber-form">
+                <div class="form-group">
+                    <input type="text" id="name" required>
+                    <label for="name">YOUR NAME</label>
+                    <div class="form-line"></div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" required>
+                    <label for="email">YOUR EMAIL</label>
+                    <div class="form-line"></div>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" required></textarea>
+                    <label for="message">YOUR MESSAGE</label>
+                    <div class="form-line"></div>
+                </div>
+                <button type="submit" class="cyber-button">
+                    <span class="button-text">SEND MESSAGE</span>
+                    <span class="button-glow"></span>
+                </button>
+            </form>
+            <div class="contact-particles" id="particles-js"></div>
+        </section>
+
+        <footer class="cyber-footer">
+            <div class="footer-logo">STELLAR</div>
+            <div class="footer-copy">&copy; 2023 FUTURE MODEL AGENCY</div>
+            <div class="footer-secret">
+                <button id="secret-btn">♥</button>
+            </div>
+        </footer>
+
+        <div class="secret-modal" id="secret-modal">
+            <div class="modal-content">
+                <div class="modal-close">&times;</div>
+                <h3>FOR YOUR EYES ONLY</h3>
+                <p>Every moment with you feels like the future I always dreamed of.</p>
+                <p>No matter what timeline we're in, I'll always find you.</p>
+                <div class="heart-container">
+                    <div class="pixel-heart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
